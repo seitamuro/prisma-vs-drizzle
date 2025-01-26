@@ -18,5 +18,9 @@ export class SecretsStack extends cdk.Stack {
     });
 
     this.dbSecret = dbSecret;
+
+    new cdk.CfnOutput(this, "SecretName", {
+      value: this.dbSecret.secretName,
+    });
   }
 }
